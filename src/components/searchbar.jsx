@@ -1,5 +1,5 @@
 import { useState } from 'react';
-function Searchbar(setState) {
+function Searchbar({ setSearchCoordinates }) {
     const [searchValue, setSearchValue] = useState('');
 
     async function getRequest() {
@@ -12,7 +12,7 @@ function Searchbar(setState) {
         let data = await response.json();
         console.log(data);
         setSearchValue('');
-        setState({ latitude: data[0].lat, longitude: data[0].lon });
+        setSearchCoordinates({ lat: data[0].lat, lng: data[0].lon });
     }
 
     function handleChange(e) {

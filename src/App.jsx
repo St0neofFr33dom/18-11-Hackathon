@@ -8,22 +8,35 @@ import { Wrapper, Status } from '@googlemaps/react-wrapper';
 import { foodBanks } from './dummdata.js';
 
 function App() {
-  const render = (status) => {
-    return <h1>{status}</h1>;
-  };
+    const [searchCoordinates, setSearchCoordinates] = useState({});
 
-  return (
-    <div className='App'>
-      <Wrapper apiKey={import.meta.env.VITE_SECRET} render={render}>
-        <Map>
-          {foodBanks.map((place, index) => {
-            return <Marker key={index} position={{ lat: place.lat, lng: place.lng }} />;
-          })}
-        </Map>
-      </Wrapper>
-      <SearchBar />
-    </div>
-  );
+    function logCoord() {
+        console.log(searchCoordinates);
+    }
+
+    const render = (status) => {
+        return <h1>{status}</h1>;
+    };
+
+    return (
+        <div className='App'>
+            <Wrapper apiKey={import.meta.env.VITE_SECRET} render={render}>
+                <Map searchCoordinates={searchCoordinates}>
+                    {foodBanks.map((place, index) => {
+                        return (
+                            <Marker
+                                key={index}
+                                position={searchCoordinates}
+                                searchCoordinates={searchCoordinates}
+                            />
+                        );
+                    })}
+                </Map>
+            </Wrapper>
+            <SearchBar setSearchCoordinates={setSearchCoordinates} />
+            <button onClick={logCoord}>Log coord</button>
+        </div>
+    );
 }
 
 export default App;
