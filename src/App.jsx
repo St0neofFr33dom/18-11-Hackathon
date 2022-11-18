@@ -3,6 +3,7 @@ import Map from './map';
 import.meta.env;
 import './App.css';
 import Marker from './marker';
+import SearchBar from'./components/searchbar';
 import { Wrapper, Status } from '@googlemaps/react-wrapper';
 import { foodBanks } from './dummdata.js';
 
@@ -20,6 +21,7 @@ function App() {
           })}
         </Map>
       </Wrapper>
+      <Searchbar />
     </div>
   );
 }
