@@ -15,8 +15,8 @@ function App() {
     <div className='App'>
       <Wrapper apiKey={import.meta.env.VITE_SECRET} render={render}>
         <Map>
-          {foodBanks.map((place) => {
-            return <Marker position={{ lat: place.lat, lng: place.lng }} />;
+          {foodBanks.map((place, index) => {
+            return <Marker key={index} position={{ lat: place.lat, lng: place.lng }} />;
           })}
         </Map>
       </Wrapper>
