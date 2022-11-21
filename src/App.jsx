@@ -23,6 +23,12 @@ function App() {
         return <h1>{status}</h1>;
     };
 
+    function getMarkers(){
+      let markers = document.querySelector("#map")
+      console.log(markers)
+      console.log(markers.children)
+    }
+
     return (
         <div className='App'>
             <Wrapper apiKey={import.meta.env.VITE_SECRET} render={render}>
@@ -31,15 +37,17 @@ function App() {
                         return (
                             <Marker
                                 key={index}
-                                position={searchCoordinates}
-                                searchCoordinates={searchCoordinates}
+                                position={{lat:place.lat,lng:place.lng}}
+                                data={place}
                             />
                         );
                     })}
                 </Map>
             </Wrapper>
             <SearchBar setSearchCoordinates={setSearchCoordinates} />
+            <InfoBox props={foodBanks[0]}/>
             <button onClick={logCoord}>Log coord</button>
+            <button onClick={getMarkers}>Test</button>
         </div>
     );
 }

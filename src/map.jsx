@@ -8,7 +8,6 @@ export default function Map({ children, searchCoordinates }) {
 
     useEffect(() => {
         if (ref.current && !map) {
-            console.log(ref);
             setMap(
                 new window.google.maps.Map(ref.current, {
                     center: {
@@ -31,7 +30,9 @@ export default function Map({ children, searchCoordinates }) {
                 if (React.isValidElement(child)) {
                     // set the map prop on the child component
                     // @ts-ignore
-                    return React.cloneElement(child, { map });
+                    let element = React.cloneElement(child, { map });
+                    console.log(element)
+                    return element
                 }
             })}
         </>
