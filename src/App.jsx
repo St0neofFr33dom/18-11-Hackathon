@@ -8,7 +8,10 @@ import { Wrapper, Status } from '@googlemaps/react-wrapper';
 import { foodBanks } from './dummdata.js';
 
 function App() {
-    const [searchCoordinates, setSearchCoordinates] = useState({});
+    const [searchCoordinates, setSearchCoordinates] = useState({
+        lat: 51.509865,
+        lng: -0.118092,
+    });
 
     function logCoord() {
         console.log(searchCoordinates);

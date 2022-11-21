@@ -7,24 +7,23 @@ export default function Map({ children, searchCoordinates }) {
     const [map, setMap] = useState();
 
     useEffect(() => {
-        if (ref.current && !map && !searchCoordinates) {
+        if (ref.current && !map) {
+            console.log(ref);
             setMap(
                 new window.google.maps.Map(ref.current, {
-                    center: { lat: 51.509865, lng: -0.118092 },
+                    center: {
+                        lat: searchCoordinates.lat,
+                        lng: searchCoordinates.lng,
+                    },
                     zoom: 10,
                 })
             );
         }
+    }, [ref, map]);
 
-        if (ref.current && !map && searchCoordinates) {
-            setMap(
-                new window.google.maps.Map(ref.current, {
-                    center: searchCoordinates,
-                    zoom: 10,
-                })
-            );
-        }
-    }, [ref, map, searchCoordinates]);
+    useEffect(() => {
+        map ? map.setCenter(searchCoordinates) : null;
+    }, [searchCoordinates]);
     return (
         <>
             <div id='map' ref={ref}></div>
