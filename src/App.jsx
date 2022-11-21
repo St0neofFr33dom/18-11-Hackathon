@@ -15,7 +15,7 @@ function App() {
         lng: -0.118092,
     });
 
-    const [displayedData,setDisplayedData] = useState(foodBanks[0])
+    const [displayedData, setDisplayedData] = useState(foodBanks[0]);
 
     function logCoord() {
         console.log(searchCoordinates);
@@ -25,36 +25,36 @@ function App() {
         return <h1>{status}</h1>;
     };
 
-    function getMarkers(){
-      let markers = document.querySelector("#map")
-      console.log(markers)
-      console.log(markers.children)
+    function getMarkers() {
+        let markers = document.querySelector('#map');
+        console.log(markers);
+        console.log(markers.children);
     }
 
     return (
         <div className='App'>
-            {/* <Wrapper apiKey={import.meta.env.VITE_SECRET} render={render}>
+            <Wrapper apiKey={import.meta.env.VITE_SECRET} render={render}>
                 <Map searchCoordinates={searchCoordinates}>
                     {foodBanks.map((place, index) => {
                         return (
                             <Marker
                                 key={index}
-                                position={{lat:place.lat,lng:place.lng}}
+                                position={{ lat: place.lat, lng: place.lng }}
                                 data={place}
-                                setState={()=>{setDisplayedData(place)}}
+                                setState={() => {
+                                    setDisplayedData(place);
+                                }}
                             />
                         );
                     })}
                 </Map>
             </Wrapper>
             <SearchBar setSearchCoordinates={setSearchCoordinates} />
-            <InfoBox props={displayedData}/>
+            <InfoBox props={displayedData} />
             <button onClick={logCoord}>Log coord</button>
-            <button onClick={getMarkers}>Test</button> */}
+            <button onClick={getMarkers}>Test</button>
 
             <Form />
-
-
         </div>
     );
 }
