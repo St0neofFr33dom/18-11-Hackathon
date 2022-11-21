@@ -5,6 +5,7 @@ import './App.css';
 import Marker from './marker';
 import SearchBar from './components/searchbar';
 import InfoBox from './components/InfoBox';
+import Form from './components/Form';
 import { Wrapper, Status } from '@googlemaps/react-wrapper';
 import { foodBanks } from './dummdata.js';
 
@@ -32,7 +33,7 @@ function App() {
 
     return (
         <div className='App'>
-            <Wrapper apiKey={import.meta.env.VITE_SECRET} render={render}>
+            {/* <Wrapper apiKey={import.meta.env.VITE_SECRET} render={render}>
                 <Map searchCoordinates={searchCoordinates}>
                     {foodBanks.map((place, index) => {
                         return (
@@ -49,7 +50,11 @@ function App() {
             <SearchBar setSearchCoordinates={setSearchCoordinates} />
             <InfoBox props={displayedData}/>
             <button onClick={logCoord}>Log coord</button>
-            <button onClick={getMarkers}>Test</button>
+            <button onClick={getMarkers}>Test</button> */}
+
+            <Form />
+
+
         </div>
     );
 }
