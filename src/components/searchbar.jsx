@@ -1,9 +1,8 @@
 import { useState } from 'react';
-function Searchbar(setState) {
+function Searchbar({ setSearchCoordinates }) {
     const [searchValue, setSearchValue] = useState('');
 
     async function getRequest() {
-        console.log(import.meta.env.VITE_WEATHER_API_KEY);
         let response = await fetch(
             `http://api.openweathermap.org/geo/1.0/direct?q=${searchValue}&limit=5&appid=${
                 import.meta.env.VITE_WEATHER_API_KEY
@@ -12,7 +11,7 @@ function Searchbar(setState) {
         let data = await response.json();
         console.log(data);
         setSearchValue('');
-        setState({ latitude: data[0].lat, longitude: data[0].lon });
+        setSearchCoordinates({ lat: data[0].lat, lng: data[0].lon });
     }
 
     function handleChange(e) {
