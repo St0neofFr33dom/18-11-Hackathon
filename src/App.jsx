@@ -4,6 +4,7 @@ import.meta.env;
 import './App.css';
 import Marker from './marker';
 import SearchBar from './components/searchbar';
+import InfoBox from './components/InfoBox';
 import { Wrapper, Status } from '@googlemaps/react-wrapper';
 import { foodBanks } from './dummdata.js';
 
@@ -12,6 +13,7 @@ function App() {
         lat: 51.509865,
         lng: -0.118092,
     });
+
 
     function logCoord() {
         console.log(searchCoordinates);

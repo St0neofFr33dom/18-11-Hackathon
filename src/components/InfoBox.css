@@ -1,0 +1,19 @@
+.InfoBox{
+    border: 1px black solid;
+    padding: 0.5em;
+}
+
+
+
+.data{
+    display: flex;
+    flex-direction: row;
+}
+
+.labels{
+    text-align: left;
+}
+.values{
+    padding-left: 0.5em;
+    text-align: left;
+}
