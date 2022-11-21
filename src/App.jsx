@@ -14,6 +14,7 @@ function App() {
         lng: -0.118092,
     });
 
+    const [displayedData,setDisplayedData] = useState(foodBanks[0])
 
     function logCoord() {
         console.log(searchCoordinates);
@@ -39,13 +40,14 @@ function App() {
                                 key={index}
                                 position={{lat:place.lat,lng:place.lng}}
                                 data={place}
+                                setState={()=>{setDisplayedData(place)}}
                             />
                         );
                     })}
                 </Map>
             </Wrapper>
             <SearchBar setSearchCoordinates={setSearchCoordinates} />
-            <InfoBox props={foodBanks[0]}/>
+            <InfoBox props={displayedData}/>
             <button onClick={logCoord}>Log coord</button>
             <button onClick={getMarkers}>Test</button>
         </div>

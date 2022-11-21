@@ -31,7 +31,6 @@ export default function Map({ children, searchCoordinates }) {
                     // set the map prop on the child component
                     // @ts-ignore
                     let element = React.cloneElement(child, { map });
-                    console.log(element)
                     return element
                 }
             })}

@@ -16,6 +16,7 @@ export default function Marker(options) {
 
   useEffect(() => {
     if (marker) {
+      marker.addListener("click",options.setState)
       marker.setOptions(options);
     }
   }, [marker, options]);
