@@ -10,6 +10,8 @@ import { Wrapper, Status } from '@googlemaps/react-wrapper';
 import { foodBanks } from './dummdata.js';
 
 function App() {
+    const [locations, setLocations] = useState(foodBanks);
+
     const [searchCoordinates, setSearchCoordinates] = useState({
         lat: 51.509865,
         lng: -0.118092,
@@ -35,7 +37,7 @@ function App() {
         <div className='App'>
             <Wrapper apiKey={import.meta.env.VITE_SECRET} render={render}>
                 <Map searchCoordinates={searchCoordinates}>
-                    {foodBanks.map((place, index) => {
+                    {locations.map((place, index) => {
                         return (
                             <Marker
                                 key={index}
@@ -54,7 +56,7 @@ function App() {
             <button onClick={logCoord}>Log coord</button>
             <button onClick={getMarkers}>Test</button>
 
-            <Form />
+            <Form locations={locations} setLocations={setLocations} />
         </div>
     );
 }

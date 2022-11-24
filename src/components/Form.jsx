@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { getRequest } from '../funcs/getRequest.jsx';
 
-export default function Form() {
+export default function Form({ locations, setLocations }) {
     const [form, setForm] = useState({
         name: '',
         firstLine: '',
@@ -18,8 +19,10 @@ export default function Form() {
         setForm({ ...form, [name]: value });
     }
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
+        let coordinates = await getRequest(form.postcode);
+        setLocations([...locations, { ...form, ...coordinates }]);
         console.log(form);
     }
 
