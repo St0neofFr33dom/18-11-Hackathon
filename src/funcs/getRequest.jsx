@@ -2,8 +2,14 @@ export async function getRequest(searchValue) {
     let postcodeRegex = /^([a-zA-Z]{1,2}[a-zA-Z\d]{1,2})\s?(\d[a-zA-Z]{2})$/;
     let url = '';
     if (postcodeRegex.test(searchValue)) {
+        console.log('post code attempt');
         url = `https://api.postcodes.io/postcodes/${searchValue}`;
         let response = await fetch(url);
+        if(response.ok === false) {
+            alert('invalid postcode')
+            return
+        }
+        console.log(response);
         let data = await response.json();
         console.log(data);
         let returnObject = {
