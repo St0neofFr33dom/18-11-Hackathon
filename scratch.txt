@@ -1,0 +1,27 @@
+Having pins render only within the radius
+
+Pins = lat and long
+
+set boundaries for lat and long for pins to appear, corresponding to whree the map is centered and the radius specified user
+
+user puts in their postcode/city
+
+we get the lat and long to center the map there
+
+we get the radius specified by the user and drawing a circle
+
+Use that radius add and subtradaxcting the search coordinates lat and long to find uppder and lower boundaries
+
+e.g. searchcoordinates = lat:30 long: 10
+radius is set to 10 miles
+
+latRange = {lower: 30 - (radius converted to lat degrees), higher: 30 + (radius converted to lat degrees)}
+longRange = {lower: 10 - (radius converted to long degrees), higher: 10 + (radius converted to long degrees)}
+
+e.g. latRange (lower:29.5, higher 30.5)
+longRange (lower:9.5, higher 10.5)
+
+loop through the array of locations
+only if (location lat is > lowerLat && < higherLat){
+    render pin
+}

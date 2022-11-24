@@ -6,11 +6,15 @@ import Marker from './marker';
 import SearchBar from './components/searchbar';
 import InfoBox from './components/InfoBox';
 import Form from './components/Form';
+import MileRadius from './components/MileRadius.jsx'
 import { Wrapper, Status } from '@googlemaps/react-wrapper';
 import { foodBanks } from './dummdata.js';
+import { Range } from 'react-range'
 
 function App() {
     const [locations, setLocations] = useState(foodBanks);
+
+    const [radius,setRadius] = useState(10)
 
     const [searchCoordinates, setSearchCoordinates] = useState({
         lat: 51.509865,
@@ -33,6 +37,10 @@ function App() {
         console.log(markers.children);
     }
 
+    function handleChange(e){
+        setRadius(e.target.value)
+    }
+
     return (
         <div className='App'>
             <Wrapper apiKey={import.meta.env.VITE_SECRET} render={render}>
@@ -49,8 +57,10 @@ function App() {
                             />
                         );
                     })}
+                    <MileRadius center={searchCoordinates} radius={radius*1000} fillColor="#0F0"/>
                 </Map>
             </Wrapper>
+            <input type="number" value={radius} onChange={handleChange}/>
             <SearchBar setSearchCoordinates={setSearchCoordinates} />
             <InfoBox props={displayedData} />
             <button onClick={logCoord}>Log coord</button>

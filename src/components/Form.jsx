@@ -22,6 +22,9 @@ export default function Form({ locations, setLocations }) {
     async function handleSubmit(e) {
         e.preventDefault();
         let coordinates = await getRequest(form.postcode);
+        if (coordinates === "Error"){
+            return
+        }
         setLocations([...locations, { ...form, ...coordinates }]);
         setForm({
           name: '',

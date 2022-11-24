@@ -7,7 +7,7 @@ export async function getRequest(searchValue) {
         let response = await fetch(url);
         if(response.ok === false) {
             alert('invalid postcode')
-            return
+            return "Error"
         }
         console.log(response);
         let data = await response.json();

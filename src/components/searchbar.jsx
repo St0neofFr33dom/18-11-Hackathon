@@ -6,6 +6,7 @@ function Searchbar({ setSearchCoordinates }) {
 
     async function findCoordinates() {
         let coordinates = await getRequest(searchValue);
+        if (coordinates === "Error"){return}
         setSearchCoordinates(coordinates);
         setSearchValue('');
     }
