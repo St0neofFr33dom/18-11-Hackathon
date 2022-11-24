@@ -23,7 +23,16 @@ export default function Form({ locations, setLocations }) {
         e.preventDefault();
         let coordinates = await getRequest(form.postcode);
         setLocations([...locations, { ...form, ...coordinates }]);
-        console.log(form);
+        setForm({
+          name: '',
+          firstLine: '',
+          secondLine: '',
+          town: '',
+          postcode: '',
+          phone: '',
+          email: '',
+          website: '',
+        })
     }
 
     return (

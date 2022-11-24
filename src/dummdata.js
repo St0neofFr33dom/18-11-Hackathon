@@ -1,29 +1,38 @@
 export const foodBanks = [
   { 
-    name: 'Central London',
+    name: '7Eleven',
     lat: 51.509865,
     lng: -0.118092,
-    address: "123 Fake Street",
-    telephone: "07777777777",
+    firstLine: "123",
+    secondLine: 'Fake Street',
+    town: 'London',
+    postcode: 'WA1 SJJ',
+    phone: "07777777777",
     email: "foodbankinc@hotmail.com",
-    rating: 4.7
+    website: 'www.google.com'
   },
   { 
-    name: 'Dulwich',
+    name: 'Woolworths',
     lat: 51.4418680,
     lng: -0.0848050,
-    address: "55 Street Street",
-    telephone: "05555555",
+    firstLine: "55",
+    secondLine: "Street Street",
+    town: "London",
+    postcode: "WA2 SLK",
+    phone: "05555555",
     email: "someemail@hotmail.com",
-    rating: 3.3
+    website: "www.askjeeves.co.uk"
   },
   { 
-    name: 'Wembley',
+    name: 'McDonalds',
     lat: 51.550503,
     lng: -0.304841,
-    address: "52 Silent Hill",
-    telephone: "088888888",
+    firstLine: "52",
+    secondLine: "Silent Hill",
+    town: "Brighton",
+    postcode: "BR1 9IL",
+    phone: "088888888",
     email: "pyramidsheadsfoodheap@yahoo.com",
-    rating: 1.0
+    website: "www.myspace.co.uk"
   },
 ];
