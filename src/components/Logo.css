@@ -1,9 +1,9 @@
 .logo{
-    width: 40vw;
-    height: 40vw;
+    width: 50vw;
+    height: 50vw;
     margin-top:2rem;
     border-radius: 50%;
-    background-color: #5127E650;
+    background-color: #5127E680;
     text-align: center;
     display: flex;
     flex-direction: column;
