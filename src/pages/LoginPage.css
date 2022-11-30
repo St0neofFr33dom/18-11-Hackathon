@@ -58,10 +58,8 @@ justify-content: space-between;
 
 @media screen and (min-width:720px) {
     .login-page{
+        height: 98vh;
         width: 720px;
-        display:none;
-    }
-    body{
-        display:none;
+        box-shadow: 4px 4px 10px -2px #333;
     }
 }
