@@ -8,7 +8,7 @@ function LoginPage () {
         <main className="login-page">
             <div className="background-filter"> 
                 <Logo />
-                <p>connecting your community with foodbanks</p>
+                <p className='tagline'>connecting your community with foodbanks</p>
                 <div className="input-fields">
                     <input placeholder='email'/>
                     <input placeholder='password'/>
