@@ -18,7 +18,7 @@ function LoginPage () {
                     <Button text="login" func={()=>{console.log("Hi")}} />
                     <Button text="continue as guest" func={()=>{console.log("Hi")}} />
                 </div>
-                <p>don't have an account? <a>sign up here</a></p>
+                <p className='create-account'>don't have an account? <a>sign up here</a></p>
             </div>
         </main>
     )

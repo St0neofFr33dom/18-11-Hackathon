@@ -1,8 +1,10 @@
 .login-page{
-    width:100vw;
+    width:min(100vw,720px);
     height:100vh;
     background-image: url("https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
     background-position-x: 60%;
+    background-size: cover;
+    align-self: center;
 }
 
 .background-filter{
@@ -12,18 +14,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
 }
 
 .background-filter > p{
     color: #FFFFFF;
-    margin-top: 1rem;
 }
 
 .input-fields{
-    margin-top: 4rem;
-    margin-bottom: 0.8rem;
-  width:60vw;
-  height: 15vh;
+  width:60%;
+  height: 15%;
   display: flex;
 flex-direction: column;
 justify-content: space-between;
@@ -51,8 +51,17 @@ justify-content: space-between;
 .button-group{
     width: 85%;
     display: flex;
-    justify-content: space-between;
-    margin-top: 5rem;
-    margin-bottom: 2rem;
+    justify-content: space-around;
+    gap:1rem;
 }
 
+
+@media screen and (min-width:720px) {
+    .login-page{
+        width: 720px;
+        display:none;
+    }
+    body{
+        display:none;
+    }
+}
