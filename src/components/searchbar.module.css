@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: flex-start;
     position: absolute;
+    top: 2rem;
     left: 50%;
     right: 50%;
     transform: translate(-50%);
