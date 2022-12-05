@@ -1,8 +1,14 @@
 import { useState } from 'react';
 import { getRequest } from '../funcs/getRequest.jsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import styles from './searchbar.module.css'
+
 function Searchbar({ setSearchCoordinates }) {
     const [searchValue, setSearchValue] = useState('');
     let postcodeRegex = /^([a-zA-Z]{1,2}[a-zA-Z\d]{1,2})\s?(\d[a-zA-Z]{2})$/;
+
+    const [borderFocus, setBorderFocus ] = useState(false)
 
     async function findCoordinates() {
         let coordinates = await getRequest(searchValue);
@@ -21,17 +27,25 @@ function Searchbar({ setSearchCoordinates }) {
         }
     }
 
+    console.log(borderFocus);
+
     return (
-        <div>
+        <div className={borderFocus ? styles.inputGreenBorder : styles.inputContainer}>
+            <FontAwesomeIcon className={styles.inputMagnifyingGlass} icon={faMagnifyingGlass} />
             <input
+                onBlur={() => setBorderFocus(false)}
+                onFocus={
+                    () => setBorderFocus(true)
+                }
+                className={styles.inputSearch}
                 type='text'
-                placeholder='city / postcode'
+                placeholder='search'
                 value={searchValue}
                 onChange={handleChange}
                 onKeyDown={keyPress}
             />
 
-            <button onClick={findCoordinates}>Search</button>
+            <button className={styles.inputSearchButton} onClick={findCoordinates}>Search</button>
         </div>
     );
 }
