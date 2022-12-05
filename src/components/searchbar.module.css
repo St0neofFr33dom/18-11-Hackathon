@@ -1,52 +1,61 @@
 .inputContainer {
-  border: 2px solid black;
-  border-radius: 20px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
+    background-color: aliceblue;
+    width: 20rem;
+    border: 2px solid black;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%);
+    z-index: 1;
 }
 
 .inputGreenBorder {
-  border: 2px solid green;
-  border-radius: 20px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
+    border: 2px solid green;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
 .inputMagnifyingGlass {
-  margin-left: .5rem;
-  margin-right: .3rem;
+    margin-left: 0.5rem;
+    margin-right: 0.3rem;
 }
 
-
 .inputSearch {
-  padding: 0.6rem 0;
-  background-color: transparent;
-  border: none;
-  /* border-radius: 8px; */
-  font-size: 1rem;
-  font-family: 'Comfortaa';
+    flex-grow: 1;
+    padding: 0.6rem 0;
+    background-color: transparent;
+    border: none;
+    /* border-radius: 8px; */
+    font-size: 1rem;
+    font-family: 'Comfortaa';
 }
 
 .inputSearch:focus {
-  /* border: solid green 1px; */
-  background-color: transparent;
-  outline: none;
+    /* border: solid green 1px; */
+    background-color: transparent;
+    outline: none;
 }
 
 .inputSearch:focus::placeholder {
-  color: transparent;
+    color: transparent;
 }
 
 .inputSearch::placeholder {
-  color: blue;
-  font-family: 'Comfortaa';
-  font-size: 1rem;
-  /* text-align: center; */
+    color: blue;
+    font-family: 'Comfortaa';
+    font-size: 1rem;
+    /* text-align: center; */
 }
 
 .inputSearchButton {
-  background-color: aliceblue;
-  border-left: 0.05rem solid black;
+    background-color: aliceblue;
+    border-left: 0.05rem solid black;
 }
