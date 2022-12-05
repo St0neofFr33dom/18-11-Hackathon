@@ -1,8 +1,21 @@
 .InfoBox {
     border: 1px black solid;
+    background-color: #5127E6;
     padding: 0.5em;
     position: absolute;
     bottom: 0;
+    color: #FFFFFF;
+    font-family: "Comfortaa";
+    width: 90%;
+    height: 15%;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%);
+    transition: 0.3s;
+}
+
+.InfoBox:focus{
+    height: 75%
 }
 
 .data {
