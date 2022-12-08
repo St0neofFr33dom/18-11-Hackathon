@@ -29,8 +29,6 @@ function Searchbar({ setSearchCoordinates }) {
         }
     }
 
-    console.log(borderFocus);
-
     function testFunction() {
         setBorderFocus(true);
         document.body.addEventListener('click', (e) => {

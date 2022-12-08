@@ -1,15 +1,23 @@
 import React from 'react';
 import { useState, useEffect, useRef } from 'react';
 import Searchbar from './components/searchbar.jsx';
+import RadiusSelector from './components/RadiusSelector.jsx';
 import './map.css';
 
 export default function Map({
     children,
     searchCoordinates,
     setSearchCoordinates,
+    radius,
+    setRadius
 }) {
     const ref = useRef(null);
     const [map, setMap] = useState();
+
+    function handleChange(e) {
+        setRadius(e.target.value);
+    }
+
 
     useEffect(() => {
         if (ref.current && !map) {
@@ -41,6 +49,7 @@ export default function Map({
                     return element;
                 }
             })}
+            <RadiusSelector radius={radius} handleChange={handleChange} />
         </div>
     );
 }

@@ -12,6 +12,7 @@
     right: 50%;
     transform: translate(-50%);
     transition: 0.3s;
+    z-index: 3;
 }
 
 .InfoBox:focus{

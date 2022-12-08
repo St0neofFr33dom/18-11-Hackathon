@@ -47,6 +47,8 @@ function MapPage() {
                 <Map
                     searchCoordinates={searchCoordinates}
                     setSearchCoordinates={setSearchCoordinates}
+                    radius={radius}
+                    setRadius={setRadius}
                 >
                     {locations.map((place, index) => {
                         return (
@@ -68,7 +70,6 @@ function MapPage() {
                 </Map>
             </Wrapper>
             {/* <SearchBar setSearchCoordinates={setSearchCoordinates} /> */}
-            <input type='number' value={radius} onChange={handleChange} />
             <InfoBox props={displayedData} />
 
             {/* <Form locations={locations} setLocations={setLocations} /> */}

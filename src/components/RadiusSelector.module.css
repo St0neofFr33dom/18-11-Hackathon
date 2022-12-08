@@ -1,0 +1,24 @@
+.radiusSelector{
+    width: min(70%, 30rem);
+    position: absolute;
+    bottom: 10rem;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%);
+    z-index: 1;
+    background-color: rgba(200,200,200,0.7);
+}
+
+.slider{
+    width: 100%;
+    color: #27E651;
+    background-color: #27E651;
+}
+
+.slider:active{
+    color: #27E651;
+    background-color: #27E651;
+}
+.label{
+    color: white;
+}
