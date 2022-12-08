@@ -36,6 +36,11 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  /* Community Yard Variables */
+  --color-zesty-palmtree: #27E651;
+  --color-zesty-palmtree-transparent: #27E65155;
+  
 }
 
 a {
