@@ -1,13 +1,18 @@
 .InfoBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     border: 1px black solid;
-    background-color: #5127E6;
+    background-color: #5127e6;
     padding: 0.5em;
     position: absolute;
     bottom: 0;
-    color: #FFFFFF;
-    font-family: "Comfortaa";
+    color: #ffffff;
+    font-family: 'Comfortaa';
+    top: 80%;
     width: 90%;
-    height: 15%;
+    height: 75%;
     left: 50%;
     right: 50%;
     transform: translate(-50%);
@@ -15,8 +20,9 @@
     z-index: 3;
 }
 
-.InfoBox:focus{
-    height: 75%
+.InfoBox:focus {
+    /* height: 75%; */
+    top: 25vh;
 }
 
 .data {
@@ -28,6 +34,17 @@
     text-align: left;
 }
 .values {
+    align-self: flex-start;
     padding-left: 0.5em;
+    text-align: left;
+}
+
+.contact-details {
+    align-self: flex-start;
+    text-align: left;
+    padding-left: 0.5em;
+}
+
+.survey {
     text-align: left;
 }
