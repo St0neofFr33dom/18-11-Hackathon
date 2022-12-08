@@ -1,6 +1,6 @@
 .inputContainer {
     background-color: aliceblue;
-    width: 20rem;
+    width: min(80%, 40rem);
     border: 2px solid black;
     border-radius: 20px;
     overflow: hidden;
@@ -16,6 +16,14 @@
 }
 
 .inputGreenBorder {
+    width: min(80%, 40rem);
+    background-color: aliceblue;
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%);
+    z-index: 1;
     border: 2px solid green;
     border-radius: 20px;
     overflow: hidden;
@@ -30,6 +38,7 @@
 
 .inputSearch {
     flex-grow: 1;
+    overflow: hidden;
     padding: 0.6rem 0;
     background-color: transparent;
     border: none;
@@ -56,6 +65,7 @@
 }
 
 .inputSearchButton {
+    /* min-width: 5rem; */
     background-color: aliceblue;
     border-left: 0.05rem solid black;
 }

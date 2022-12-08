@@ -5,9 +5,9 @@ export async function getRequest(searchValue) {
         console.log('post code attempt');
         url = `https://api.postcodes.io/postcodes/${searchValue}`;
         let response = await fetch(url);
-        if(response.ok === false) {
-            alert('invalid postcode')
-            return "Error"
+        if (response.ok === false) {
+            alert('invalid postcode');
+            return 'Error';
         }
         console.log(response);
         let data = await response.json();
@@ -23,7 +23,11 @@ export async function getRequest(searchValue) {
         }`;
         let response = await fetch(url);
         let data = await response.json();
-        console.log(data);
+        if (data.length === 0) {
+            alert('invalid location');
+            return 'Error';
+        }
+        console.log(response);
         let returnObject = { lat: data[0].lat, lng: data[0].lon };
         return returnObject;
     }
