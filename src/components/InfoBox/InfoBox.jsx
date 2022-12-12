@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './InfoBox.css';
-import ExpandCollapseArrow from './ExpandCollapseArrow';
-import TextWithIcon from './TextWithIcon';
+import ExpandCollapseArrow from '../ExpandCollapseArrow/ExpandCollapseArrow';
+import TextWithIcon from '../TextWithIcon';
 import {faEnvelope, faPhone, faGlobe } from '@fortawesome/free-solid-svg-icons';
 
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import arrow from '../assets/arrows.svg';
+import arrow from '../../assets/arrows.svg';
 import styles from './ExpandCollapseArrow.module.css'
 
 function ExpandCollapseArrow ({state, setState}) {

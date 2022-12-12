@@ -3,7 +3,7 @@
     padding: 0.25rem 0.5rem 0 0.5rem;
     width: min(70%, 30rem);
     position: absolute;
-    bottom: 10rem;
+    top: 70%;
     left: 50%;
     right: 50%;
     transform: translate(-50%);
