@@ -6,6 +6,7 @@ import InfoBox from "../../components/InfoBox";
 import MileRadius from "../../components/Map/MileRadius/index.jsx";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import { foodBanks } from "../../data/dummdata.js";
+import getGeolocation from "../../funcs/getGeolocation";
 
 function MapPage() {
   const [locations, setLocations] = useState(foodBanks);
@@ -26,6 +27,11 @@ function MapPage() {
   const render = (status) => {
     return <h1>{status}</h1>;
   };
+
+  async function testFunction(){
+   getGeolocation(setSearchCoordinates)
+    return
+  }
 
   return (
     <div className="mapContainer">

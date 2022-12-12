@@ -1,8 +1,11 @@
 import React from 'react';
 import { useState, useEffect, useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLocationCrosshairs } from '@fortawesome/free-solid-svg-icons'
 import Searchbar from './Searchbar';
 import RadiusSelector from './RadiusSelector';
 import './map.css';
+import getGeolocation from '../../funcs/getGeolocation';
 
 export default function Map({
     children,
@@ -46,10 +49,12 @@ export default function Map({
             e.addEventListener('input', () => e.style.setProperty('--value', e.value));
           }
     },[])
+
     
     return (
         <div className='mapBox'>
             <Searchbar setSearchCoordinates={setSearchCoordinates} />
+            <FontAwesomeIcon className='geoButton' icon={faLocationCrosshairs} onClick={()=>{getGeolocation(setSearchCoordinates)}}/>
             <div id='map' ref={ref}></div>
             {React.Children.map(children, (child) => {
                 if (React.isValidElement(child)) {
