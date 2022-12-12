@@ -1,13 +1,11 @@
 import { useEffect, useState, useRef } from "react";
-import Map from "../map";
+import Map from "../../components/Map";
 import.meta.env;
-import Marker from "../marker";
-import SearchBar from "../components/searchbar";
-import InfoBox from "../components/InfoBox";
-import Form from "../components/Form";
-import MileRadius from "../components/MileRadius.jsx";
+import Marker from "../../components/Map/Marker";
+import InfoBox from "../../components/InfoBox";
+import MileRadius from "../../components/Map/MileRadius/index.jsx";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
-import { foodBanks } from "../dummdata.js";
+import { foodBanks } from "../../data/dummdata.js";
 
 function MapPage() {
   const [locations, setLocations] = useState(foodBanks);

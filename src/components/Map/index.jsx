@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect, useRef } from 'react';
-import Searchbar from './components/searchbar.jsx';
-import RadiusSelector from './components/RadiusSelector.jsx';
+import Searchbar from './Searchbar';
+import RadiusSelector from './RadiusSelector';
 import './map.css';
 
 export default function Map({
@@ -19,7 +19,7 @@ export default function Map({
     }
 
 
-    useEffect(() => {
+    useEffect(() => { //fetches from the google maps api and renders the map
         if (ref.current && !map) {
             setMap(
                 new window.google.maps.Map(ref.current, {
@@ -38,7 +38,7 @@ export default function Map({
         map ? map.setCenter(searchCoordinates) : null;
     }, [searchCoordinates]);
 
-    useEffect(()=>{
+    useEffect(()=>{ // Adds styling to the slider input so that the bar on the left of the slider thumb is coloured in
         for (let e of document.querySelectorAll('input[type="range"].slider-progress')) {
             e.style.setProperty('--value', e.value);
             e.style.setProperty('--min', e.min == '' ? '0' : e.min);

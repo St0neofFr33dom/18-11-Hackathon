@@ -1,7 +1,7 @@
 import React from 'react'
 import "./LoginPage.css"
-import Logo from '../components/Logo'
-import Button from '../components/Button'
+import Logo from '../../components/Logo'
+import Button from '../../components/Button'
 
 function LoginPage () {
     return (

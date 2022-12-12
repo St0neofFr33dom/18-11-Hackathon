@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getRequest } from '../funcs/getRequest.jsx';
+import { getRequest } from '../../funcs/getRequest.jsx';
 
 export default function Form({ locations, setLocations }) {
     const [form, setForm] = useState({

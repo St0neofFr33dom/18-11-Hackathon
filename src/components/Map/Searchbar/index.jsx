@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { getRequest } from '../../funcs/getRequest.jsx';
+import { getRequest } from '../../../funcs/getRequest.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import styles from './Searchbar.module.css';
