@@ -1,8 +1,19 @@
-import React from 'react';
+import { useState } from 'react';
 import './InfoBox.css';
+import arrow from '../assets/arrows.svg';
 function InfoBox({ props }) {
+    const [expand, setExpand] = useState(false);
     return (
-        <div className='InfoBox' tabIndex={0}>
+        <div className={`InfoBox ${expand ? `expandedInfoBox` : ''}`}>
+            <img
+                className={`arrow ${expand ? `rotateArrow` : ''}`}
+                src={arrow}
+                alt='arrow'
+                onClick={() => {
+                    setExpand(!expand);
+                }}
+            />
+            <p>{`${expand ? 'hide' : 'details'}`}</p>
             <div className='values'>
                 <h4 style={{ fontWeight: 'bold' }}>{props.name}</h4>
                 <h4>

@@ -20,9 +20,17 @@
     z-index: 3;
 }
 
-.InfoBox:focus {
+.expandedInfoBox {
     /* height: 75%; */
     top: 25vh;
+}
+
+.arrow {
+    transition: 0.25s;
+}
+
+.rotateArrow {
+    rotate: 180deg;
 }
 
 .data {
