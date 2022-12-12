@@ -1,8 +1,9 @@
 .InfoBox {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap:0.5rem;
     border: 1px black solid;
     background-color: #5127e6;
     padding: 0.5em;
@@ -25,14 +26,13 @@
     top: 25vh;
 }
 
-.arrow {
-    transition: 0.25s;
-}
 
-.rotateArrow {
-    rotate: 180deg;
+.preview{
+    display: grid;
+    grid-template-columns: 9fr 2fr 9fr;
+    /* justify-content: space-between; */
+    width: 100%;
 }
-
 .data {
     display: flex;
     flex-direction: row;
@@ -55,4 +55,5 @@
 
 .survey {
     text-align: left;
+    padding-left: 0.5em;
 }
