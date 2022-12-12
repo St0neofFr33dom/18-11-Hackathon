@@ -31,17 +31,16 @@ function InfoBox({ props }) {
                     <TextWithIcon text={props.email} icon={faEnvelope} />
                     <TextWithIcon text={props.website} icon={faGlobe} />
                 </div>
-                <div className='survey'>
-                    <h4>have you visited {props.name}?</h4>
+                <details className='survey'>
+                    <summary>have you visited {props.name}?</summary>
                     <h4>check all that apply</h4>
                     <br />
-                    <h4>opening hours</h4>
                     <h4>staff are friendly</h4>
                     <h4>easy to find</h4>
                     <h4>parking is available</h4>
                     <h4>produce is good quality</h4>
                     <h4>wheelchair access available</h4>
-                </div>
+                </details>
             </div>
         </div>
     );

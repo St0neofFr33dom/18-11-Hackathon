@@ -122,6 +122,16 @@ video {
     --color-zesty-palmtree-transparent: #27e65155;
 }
 
+/* Community yard addition */
+
+    summary {
+        color: var(--color-zesty-palmtree);
+    }
+
+
+
+
+
 a {
     color: #ffffff;
     text-decoration: underline;
@@ -364,3 +374,4 @@ input[type='range'].slider.slider-progress:active::-ms-fill-lower {
     background: #00bb29;
     border-color: #c1c1c1;
 }
+
