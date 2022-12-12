@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    gap:0.5rem;
+    gap: 0.5rem;
     border: 1px black solid;
     background-color: #5127e6;
     padding: 0.5em;
@@ -26,8 +26,7 @@
     top: 25vh;
 }
 
-
-.preview{
+.preview {
     display: grid;
     grid-template-columns: 9fr 2fr 9fr;
     /* justify-content: space-between; */
@@ -48,6 +47,7 @@
 }
 
 .contact-details {
+    margin-top: 1.5rem;
     align-self: flex-start;
     text-align: left;
     padding-left: 0.5em;
@@ -56,4 +56,12 @@
 .survey {
     text-align: left;
     padding-left: 0.5em;
+}
+
+.hiddenText {
+    opacity: 0;
+    transition: 0.3s;
+}
+.expandedText {
+    opacity: 1;
 }
