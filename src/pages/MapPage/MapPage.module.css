@@ -1,3 +1,12 @@
 .mapContainer {
     position: relative;
 }
+
+@media screen and (min-width:800px) {
+    .mapContainer{
+        display:grid;
+        grid-template-columns: 7fr 3fr;
+        width: 90vw
+    }
+
+}

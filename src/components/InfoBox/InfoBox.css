@@ -65,3 +65,15 @@
 .expandedText {
     opacity: 1;
 }
+
+@media screen and (min-width: 800px) {
+    .InfoBox{
+        position: relative;
+        align-self: flex-start;
+        top: 0;
+        right: none;
+        left: none;
+        height: 100%;
+        width:100%;
+    }
+}

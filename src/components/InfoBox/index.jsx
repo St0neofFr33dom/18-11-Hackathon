@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './InfoBox.css';
 import ExpandCollapseArrow from '../ExpandCollapseArrow';
 import TextWithIcon from '../TextWithIcon';
@@ -7,9 +7,21 @@ import {
     faPhone,
     faGlobe,
 } from '@fortawesome/free-solid-svg-icons';
+import useBrowserWidth from '../../hooks/useBrowserWidth';
 
 function InfoBox({ props }) {
+
     const [expand, setExpand] = useState(false);
+
+    const desktop = useBrowserWidth(800)
+
+    useEffect(()=>{
+        if(desktop){
+            setExpand(true)
+        }
+    },[desktop])
+ 
+
     return (
         <div className={`InfoBox ${expand ? `expandedInfoBox` : ''}`}>
             <div className='preview'>
@@ -21,7 +33,7 @@ function InfoBox({ props }) {
                     <h4>{props.town}</h4>
                     <h4>{props.postcode}</h4>
                 </div>
-                <ExpandCollapseArrow state={expand} setState={setExpand} />
+                {!desktop && <ExpandCollapseArrow state={expand} setState={setExpand} />}
                 <div></div>
             </div>
 

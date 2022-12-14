@@ -7,6 +7,7 @@ import MileRadius from "../../components/Map/MileRadius/index.jsx";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import { foodBanks } from "../../data/dummdata.js";
 import getGeolocation from "../../funcs/getGeolocation";
+import styles from "./MapPage.module.css"
 
 function MapPage() {
   const [locations, setLocations] = useState(foodBanks);
@@ -34,7 +35,7 @@ function MapPage() {
   }
 
   return (
-    <div className="mapContainer">
+    <div className={styles.mapContainer}>
       <Wrapper apiKey={import.meta.env.VITE_SECRET} render={render}>
         <Map
           searchCoordinates={searchCoordinates}
