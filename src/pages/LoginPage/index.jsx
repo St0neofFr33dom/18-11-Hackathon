@@ -1,26 +1,26 @@
 import cyLogo from "../../assets/community_yard-logo.svg"
 import React from 'react'
-import "./LoginPage.css"
+import styles from "./LoginPage.module.css"
 import Logo from '../../components/Logo'
 import Button from '../../components/Button'
 
 function LoginPage () {
     return (
-        <main className="login-page">
-            <div className="background-filter"> 
-            <img src={cyLogo}/>
+        <main className={styles.loginPage}>
+            <div className={styles.backgroundFilter}> 
+            <img class={styles.logo} src={cyLogo}/>
                 {/* <Logo /> */}
-                <p className='tagline'>connecting your community with foodbanks</p>
-                <div className="input-fields">
+                <p className={styles.tagline}>connecting your community with foodbanks</p>
+                <div className={styles.inputFields}>
                     <input placeholder='email'/>
                     <input placeholder='password'/>
                 </div>
                 <a>forgotten password?</a>
-                <div className="button-group">
+                <div className={styles.buttonGroup}>
                     <Button text="login" func={()=>{console.log("Hi")}} />
                     <Button text="continue as guest" func={()=>{console.log("Hi")}} />
                 </div>
-                <p className='create-account'>don't have an account? <a>sign up here</a></p>
+                <p className={styles.createAccount}>don't have an account? <a>sign up here</a></p>
             </div>
         </main>
     )
