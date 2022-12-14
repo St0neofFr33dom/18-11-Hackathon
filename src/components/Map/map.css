@@ -11,9 +11,9 @@
     width: 100vw;
 }
 
-.geoButton{
+.geoButton {
     position: absolute;
-    padding:0.3rem;
+    padding: 0.3rem;
     top: 63%;
     right: 5%;
     z-index: 2;
@@ -25,22 +25,35 @@
 }
 
 .logo {
-    width: min(20%, 300px);
+    width: min(75%, 300px);
+}
+
+.logo-mobile {
+    justify-self: flex-end;
+    background-color: aliceblue;
+    border-radius: 50%;
+    position: absolute;
+    width: min(10%, 300px);
 }
 
 .logoSearchContainer {
+    margin-right: 5%;
+    margin-left: 5%;
+    width: 90%;
     z-index: 1;
     position: absolute;
-    display: flex;
-    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 3fr 1fr;
 }
 
-@media screen and (min-width:800px) {
-    .mapBox{
+@media screen and (min-width: 800px) {
+    .mapBox {
         width: 100%;
     }
 
-    .geoButton{
-        top:83%
+    .geoButton {
+        top: 83%;
     }
 }

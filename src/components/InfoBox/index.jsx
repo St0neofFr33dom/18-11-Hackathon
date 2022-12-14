@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import './InfoBox.css';
 import ExpandCollapseArrow from '../ExpandCollapseArrow';
 import TextWithIcon from '../TextWithIcon';
@@ -7,20 +7,22 @@ import {
     faPhone,
     faGlobe,
 } from '@fortawesome/free-solid-svg-icons';
-import useBrowserWidth from '../../hooks/useBrowserWidth';
+// import useBrowserWidth from '../../hooks/useBrowserWidth';
+import cyLogo from '../../assets/community_yard-logo.svg';
+import browserWidthContext from '../../context/browserWidthContext';
 
 function InfoBox({ props }) {
-
     const [expand, setExpand] = useState(false);
 
-    const desktop = useBrowserWidth(800)
+    const desktop = useContext(browserWidthContext);
 
-    useEffect(()=>{
-        if(desktop){
-            setExpand(true)
+    useEffect(() => {
+        if (desktop) {
+            setExpand(true);
+        } else {
+            setExpand(false);
         }
-    },[desktop])
- 
+    }, [desktop]);
 
     return (
         <div className={`InfoBox ${expand ? `expandedInfoBox` : ''}`}>
@@ -33,7 +35,10 @@ function InfoBox({ props }) {
                     <h4>{props.town}</h4>
                     <h4>{props.postcode}</h4>
                 </div>
-                {!desktop && <ExpandCollapseArrow state={expand} setState={setExpand} />}
+                {!desktop && (
+                    <ExpandCollapseArrow state={expand} setState={setExpand} />
+                )}
+                {!desktop && <img className='logo-mobile' src={cyLogo} />}
                 <div></div>
             </div>
 
