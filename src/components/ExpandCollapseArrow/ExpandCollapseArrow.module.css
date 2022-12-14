@@ -1,0 +1,11 @@
+.arrow {
+    transition: 0.25s;
+}
+
+.rotateArrow {
+    rotate: 180deg;
+}
+
+.container{
+    font-size: 0.75rem;
+}

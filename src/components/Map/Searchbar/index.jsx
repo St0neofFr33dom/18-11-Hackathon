@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import { getRequest } from '../funcs/getRequest.jsx';
+import { getRequest } from '../../../funcs/getRequest.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import styles from './searchbar.module.css';
+import styles from './Searchbar.module.css';
 
 function Searchbar({ setSearchCoordinates }) {
     const [searchValue, setSearchValue] = useState('');
-    let postcodeRegex = /^([a-zA-Z]{1,2}[a-zA-Z\d]{1,2})\s?(\d[a-zA-Z]{2})$/;
 
     const [borderFocus, setBorderFocus] = useState(false);
 
@@ -29,8 +28,6 @@ function Searchbar({ setSearchCoordinates }) {
         }
     }
 
-    console.log(borderFocus);
-
     function testFunction() {
         setBorderFocus(true);
         document.body.addEventListener('click', (e) => {
@@ -40,12 +37,11 @@ function Searchbar({ setSearchCoordinates }) {
             }
         });
     }
-
     return (
         <div
-            className={
-                borderFocus ? styles.inputGreenBorder : styles.inputContainer
-            }
+            className={`${styles.inputContainer} ${
+                borderFocus ? styles.inputGreenBorder : ''
+            }`}
         >
             <FontAwesomeIcon
                 className={styles.inputMagnifyingGlass}

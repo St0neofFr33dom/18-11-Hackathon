@@ -11,3 +11,10 @@ focus on searchbar bug
 5. bring back some GUI buttons (zoom)?
 
 6. desktop design - map on left?
+
+7. Update README.md
+  - Include link to working deployment
+  - Brief description of app
+  - How to use site/app
+  - Instructions - How to launch locally
+  - Roadmap - how we will develop moving forward

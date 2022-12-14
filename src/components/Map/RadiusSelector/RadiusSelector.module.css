@@ -1,0 +1,30 @@
+.radiusSelector {
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.5rem 0 0.5rem;
+    width: min(70%, 30rem);
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%);
+    z-index: 1;
+    background-color: rgba(200, 200, 200, 0.7);
+}
+
+.label {
+    color: white;
+}
+
+.kilometers {
+    font-family: 'Comfortaa';
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+@media screen and (min-width:800px) {
+    .radiusSelector{
+        top:90%
+    }
+}

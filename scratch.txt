@@ -25,3 +25,16 @@ loop through the array of locations
 only if (location lat is > lowerLat && < higherLat){
     render pin
 }
+
+
+
+Table users
+Table for locations
+
+Locations and reviews
+keep track of each catergoery - how many people cclicked it
+general track of how many reviews
+
+users
+Keep track of each location they review, and which cateogry they clicked on each location
+rewviews: [{name: location, friendly staff: true, }]
