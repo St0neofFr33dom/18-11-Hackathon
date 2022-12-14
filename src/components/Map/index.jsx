@@ -1,4 +1,5 @@
 import React from 'react';
+import cyLogo from "../../assets/community_yard-logo.svg";
 import { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationCrosshairs } from '@fortawesome/free-solid-svg-icons'
@@ -53,7 +54,10 @@ export default function Map({
     
     return (
         <div className='mapBox'>
-            <Searchbar setSearchCoordinates={setSearchCoordinates} />
+            <div className='logoSearchContainer'>
+                <img className='logo' src={cyLogo}/>
+                <Searchbar setSearchCoordinates={setSearchCoordinates} />
+            </div>
             <FontAwesomeIcon className='geoButton' icon={faLocationCrosshairs} onClick={()=>{getGeolocation(setSearchCoordinates)}}/>
             <div id='map' ref={ref}></div>
             {React.Children.map(children, (child) => {

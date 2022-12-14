@@ -24,6 +24,17 @@
     border-radius: 10px;
 }
 
+.logo {
+    width: min(20%, 300px);
+}
+
+.logoSearchContainer {
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    width: 100%;
+}
+
 @media screen and (min-width:800px) {
     .mapBox{
         width: 100%;

@@ -1,7 +1,6 @@
-import cyLogo from "../../assets/community_yard-logo.svg"
+import cyLogo from "../../assets/community_yard-logo.svg";
 import React from 'react'
 import styles from "./LoginPage.module.css"
-import Logo from '../../components/Logo'
 import Button from '../../components/Button'
 
 function LoginPage () {
