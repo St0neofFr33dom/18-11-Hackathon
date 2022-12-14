@@ -1,3 +1,4 @@
+import cyLogo from "../../assets/community_yard-logo.svg"
 import React from 'react'
 import "./LoginPage.css"
 import Logo from '../../components/Logo'
@@ -7,7 +8,8 @@ function LoginPage () {
     return (
         <main className="login-page">
             <div className="background-filter"> 
-                <Logo />
+            <img src={cyLogo}/>
+                {/* <Logo /> */}
                 <p className='tagline'>connecting your community with foodbanks</p>
                 <div className="input-fields">
                     <input placeholder='email'/>

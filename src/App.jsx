@@ -4,8 +4,8 @@ import MapPage from './pages/MapPage';
 
 function App() {
     return (
-        <MapPage />
-        // <LoginPage />
+        // <MapPage />
+        <LoginPage />
     );
 }
 
