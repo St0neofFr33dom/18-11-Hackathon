@@ -178,25 +178,6 @@ button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media screen and (min-width:800px) {
-    .mapContainer {
-        display: grid;
-        grid-template-columns: 7fr 3fr;
-        width: 100vw;
-    }
-    .infoBox{
-        position: relative;
-        align-self: flex-start;
-        top: 0;
-        right: none;
-        left: none;
-        height: 100%;
-        width:100%;
-    }
-    ._mapBox_7fcqo_11{
-        width: 100%;
-    }
-}
 
 @media (prefers-color-scheme: light) {
     :root {

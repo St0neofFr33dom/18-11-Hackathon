@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useContext } from "react";
 import Map from "../../components/Map";
 import.meta.env;
 import Marker from "../../components/Map/Marker";
@@ -8,11 +8,14 @@ import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import { foodBanks } from "../../data/dummdata.js";
 import getGeolocation from "../../funcs/getGeolocation";
 import styles from "./MapPage.module.css"
+import browserWidthContext from "../../context/browserWidthContext";
 
 function MapPage() {
   const [locations, setLocations] = useState(foodBanks);
 
   const [radius, setRadius] = useState(10);
+
+  const desktop = useContext(browserWidthContext)
 
   const [searchCoordinates, setSearchCoordinates] = useState({
     lat: 51.509865,
@@ -35,7 +38,7 @@ function MapPage() {
   }
 
   return (
-    <div className={`${styles.mapContainer} mapContainer`}>
+    <div className={` ${styles.mapContainer} ${desktop ? styles.desktopMapContainer : ''}`}>
       <Wrapper apiKey={import.meta.env.VITE_SECRET} render={render}>
         <Map
           searchCoordinates={searchCoordinates}

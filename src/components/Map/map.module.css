@@ -41,12 +41,12 @@
     grid-template-columns: 1fr 3fr 1fr;
 }
 
-@media screen and (min-width: var(--minimum-desktop-width)) {
-    .mapBox {
+
+    .desktopMapBox {
         width: 100%;
     }
 
-    .geoButton {
+    .desktopGeoButton {
         top: 83%;
     }
-}
+

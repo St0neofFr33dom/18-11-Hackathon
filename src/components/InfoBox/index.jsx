@@ -24,9 +24,8 @@ function InfoBox({ props }) {
         }
     }, [desktop]);
 
-    console.log(styles)
     return (
-        <div className={`${styles.infoBox} ${expand ? styles.expandedInfoBox : ''} infoBox`}>
+        <div className={`${styles.infoBox} ${expand ? styles.expandedInfoBox : ''} ${desktop ? styles.desktopInfoBox: ''}`}>
             <div className={styles.preview}>
                 <div className={styles.values}>
                     <h4 style={{ fontWeight: 'bold' }}>{props.name}</h4>

@@ -60,14 +60,14 @@ export default function Map({
     }, []);
 
     return (
-        <div className={styles.mapBox}>
+        <div className={`${styles.mapBox} ${desktop ? styles.desktopMapBox : ''}`}>
             <div className={styles.logoSearchContainer}>
                 {desktop && <img className={styles.logo} src={cyLogo} />}
 
                 <Searchbar setSearchCoordinates={setSearchCoordinates} />
             </div>
             <FontAwesomeIcon
-                className={styles.geoButton}
+                className={`${styles.geoButton} ${desktop ? styles.desktopGeoButton : ''}`}
                 icon={faLocationCrosshairs}
                 onClick={() => {
                     getGeolocation(setSearchCoordinates);
