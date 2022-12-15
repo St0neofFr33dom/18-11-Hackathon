@@ -35,7 +35,7 @@ function MapPage() {
   }
 
   return (
-    <div className={styles.mapContainer}>
+    <div className={`${styles.mapContainer} mapContainer`}>
       <Wrapper apiKey={import.meta.env.VITE_SECRET} render={render}>
         <Map
           searchCoordinates={searchCoordinates}

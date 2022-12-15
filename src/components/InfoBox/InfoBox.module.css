@@ -1,11 +1,12 @@
-.InfoBox {
+
+.infoBox {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     gap: 0.5rem;
     border: 1px black solid;
-    background-color: #5127e6;
+    background-color: var(--color-postman-trousers);
     padding: 0.5em;
     position: absolute;
     bottom: 0;
@@ -46,7 +47,7 @@
     text-align: left;
 }
 
-.contact-details {
+.contactDetails {
     margin-top: 1.5rem;
     align-self: flex-start;
     text-align: left;
@@ -66,8 +67,16 @@
     opacity: 1;
 }
 
-@media screen and (min-width: 800px) {
-    .InfoBox{
+.logoMobile {
+    justify-self: flex-end;
+    background-color: aliceblue;
+    border-radius: 50%;
+    position: absolute;
+    width: min(10%, 300px);
+}
+
+@media screen and (min-width: var(--minimum-desktop-width)) {
+    .infoBox{
         position: relative;
         align-self: flex-start;
         top: 0;

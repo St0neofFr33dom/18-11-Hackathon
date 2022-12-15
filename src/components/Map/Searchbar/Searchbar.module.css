@@ -58,7 +58,7 @@
     border-left: 0.05rem solid black;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: var(--minimum-desktop-width)) {
     .inputContainer {
         height: min-content;
         top: 0;

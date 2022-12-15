@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationCrosshairs } from '@fortawesome/free-solid-svg-icons';
 import Searchbar from './Searchbar';
 import RadiusSelector from './RadiusSelector';
-import './map.css';
+import styles from './map.module.css';
 import getGeolocation from '../../funcs/getGeolocation';
 import browserWidthContext from '../../context/browserWidthContext';
 // import useBrowserWidth from '../../hooks/useBrowserWidth';
@@ -60,20 +60,20 @@ export default function Map({
     }, []);
 
     return (
-        <div className='mapBox'>
-            <div className='logoSearchContainer'>
-                {desktop && <img className='logo' src={cyLogo} />}
+        <div className={styles.mapBox}>
+            <div className={styles.logoSearchContainer}>
+                {desktop && <img className={styles.logo} src={cyLogo} />}
 
                 <Searchbar setSearchCoordinates={setSearchCoordinates} />
             </div>
             <FontAwesomeIcon
-                className='geoButton'
+                className={styles.geoButton}
                 icon={faLocationCrosshairs}
                 onClick={() => {
                     getGeolocation(setSearchCoordinates);
                 }}
             />
-            <div id='map' ref={ref}></div>
+            <div id='map' className={styles.map} ref={ref}></div>
             {React.Children.map(children, (child) => {
                 if (React.isValidElement(child)) {
                     // set the map prop on the child component

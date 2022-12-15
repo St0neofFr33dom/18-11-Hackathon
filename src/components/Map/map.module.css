@@ -1,4 +1,4 @@
-#map {
+.map {
     height: 100vh;
     width: 100%;
 }
@@ -28,13 +28,6 @@
     width: min(75%, 300px);
 }
 
-.logo-mobile {
-    justify-self: flex-end;
-    background-color: aliceblue;
-    border-radius: 50%;
-    position: absolute;
-    width: min(10%, 300px);
-}
 
 .logoSearchContainer {
     margin-right: 5%;
@@ -48,7 +41,7 @@
     grid-template-columns: 1fr 3fr 1fr;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: var(--minimum-desktop-width)) {
     .mapBox {
         width: 100%;
     }
