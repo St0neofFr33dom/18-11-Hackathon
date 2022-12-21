@@ -9,7 +9,10 @@ export const foodBanks = [
     postcode: 'WA1 SJJ',
     phone: "07777777777",
     email: "foodbankinc@hotmail.com",
-    website: 'www.google.com'
+    website: 'www.google.com',
+    parking: true,
+    wheelchairAccess: true,
+    businessDescription: '7Eleven is a foodbank that works with the community to give back. Our partners are...' 
   },
   { 
     name: 'Woolworths',
@@ -21,7 +24,10 @@ export const foodBanks = [
     postcode: "WA2 SLK",
     phone: "05555555",
     email: "someemail@hotmail.com",
-    website: "www.askjeeves.co.uk"
+    website: "www.askjeeves.co.uk",
+    parking: false,
+    wheelchairAccess: true,
+    businessDescription: 'Woolworths is a foodbank that works with the community to give back. Our partners are...'
   },
   { 
     name: 'McDonalds',
@@ -33,6 +39,9 @@ export const foodBanks = [
     postcode: "BR1 9IL",
     phone: "088888888",
     email: "pyramidsheadsfoodheap@yahoo.com",
-    website: "www.myspace.co.uk"
+    website: "www.myspace.co.uk",
+    parking: true,
+    wheelchairAccess: false,
+    businessDescription: ''
   },
 ];
