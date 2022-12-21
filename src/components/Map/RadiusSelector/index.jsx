@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import browserWidthContext from '../../../context/browserWidthContext';
 import styles from './RadiusSelector.module.css';
 
 function RadiusSelector({ radius, handleChange }) {
+
+    const desktop = useContext(browserWidthContext)
     return (
-        <div className={styles.radiusSelector}>
+        <div className={`${styles.radiusSelector} ${desktop ? styles.desktopRadiusSelector : ''}`}>
             {/* <h4 className={styles.label}>Mile Radius</h4> */}
             <input
                 id={styles.slider1}

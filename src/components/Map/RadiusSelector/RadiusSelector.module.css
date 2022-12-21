@@ -23,8 +23,7 @@
     font-weight: bold;
 }
 
-@media screen and (min-width:800px) {
-    .radiusSelector{
+
+    .desktopRadiusSelector{
         top:90%
     }
-}

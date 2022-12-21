@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from 'react';
-import './InfoBox.css';
+import styles from './InfoBox.module.css';
 import ExpandCollapseArrow from '../ExpandCollapseArrow';
 import TextWithIcon from '../TextWithIcon';
 import {
@@ -25,9 +25,9 @@ function InfoBox({ props }) {
     }, [desktop]);
 
     return (
-        <div className={`InfoBox ${expand ? `expandedInfoBox` : ''}`}>
-            <div className='preview'>
-                <div className='values'>
+        <div className={`${styles.infoBox} ${expand ? styles.expandedInfoBox : ''} ${desktop ? styles.desktopInfoBox: ''}`}>
+            <div className={styles.preview}>
+                <div className={styles.values}>
                     <h4 style={{ fontWeight: 'bold' }}>{props.name}</h4>
                     <h4>
                         {props.firstLine} {props.secondLine}
@@ -38,17 +38,17 @@ function InfoBox({ props }) {
                 {!desktop && (
                     <ExpandCollapseArrow state={expand} setState={setExpand} />
                 )}
-                {!desktop && <img className='logo-mobile' src={cyLogo} />}
+                {!desktop && <img className={styles.logoMobile} src={cyLogo} />}
                 <div></div>
             </div>
 
-            <div className={`hiddenText ${expand ? `expandedText` : ''}`}>
-                <div className='contact-details'>
+            <div className={`${styles.hiddenText} ${expand ? styles.expandedText : ''}`}>
+                <div className={styles.contactDetails}>
                     <TextWithIcon text={props.phone} icon={faPhone} />
                     <TextWithIcon text={props.email} icon={faEnvelope} />
                     <TextWithIcon text={props.website} icon={faGlobe} />
                 </div>
-                <details className='survey'>
+                <details className={styles.survey}>
                     <summary>have you visited {props.name}?</summary>
                     <h4>check all that apply</h4>
                     <br />

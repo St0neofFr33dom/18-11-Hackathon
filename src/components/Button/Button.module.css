@@ -1,5 +1,5 @@
 .button{
-    background-color: #27e651;
+    background-color: var(--color-zesty-palmtree);
     width: 9rem;
     height:3rem;
     border-radius: 15px;
