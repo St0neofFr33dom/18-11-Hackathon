@@ -1,2 +1,26 @@
 .container {
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    justify-self: center;
+}
+
+.column{
+    border: 1px solid white;
+    align-items: center;
+    width:14%;
+}
+
+.day{
+    text-transform: capitalize;
+}
+
+.time{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem;
+    font-size: 0.75rem;
 }

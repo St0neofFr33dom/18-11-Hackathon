@@ -6,6 +6,8 @@ import {
     faEnvelope,
     faPhone,
     faGlobe,
+    faCar,
+    faWheelchair
 } from '@fortawesome/free-solid-svg-icons';
 // import useBrowserWidth from '../../hooks/useBrowserWidth';
 import cyLogo from '../../assets/community_yard-logo.svg';
@@ -62,15 +64,16 @@ function InfoBox({ props }) {
                     <OpeningHours props={props} />
                 </details>
                 <div className={styles.features}>
-                    {props.parking && <h4>parking is available</h4>}
+                    {props.parking && <TextWithIcon text="parking is available" icon={faCar}/>}
                     {props.wheelchairAccess && (
-                        <h4>wheelchair access available</h4>
+                        <TextWithIcon text="wheelchair access available" icon={faWheelchair}/>
                     )}
+                    <br/>
                     {props.businessDescription && (
-                        <h4>{props.businessDescription}</h4>
+                        <h4 className={styles.description}>"{props.businessDescription}"</h4>
                     )}
                     <br />
-                    <h3>currently wanted items</h3>
+                    <h3>currently wanted items :</h3>
                     <ul className={styles.wantedItems}>
                         {props.wantedItems.map((item, index) => {
                             return <li key={index}>{item}</li>;

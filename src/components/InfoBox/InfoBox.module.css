@@ -64,6 +64,7 @@
 }
 .expandedText {
     opacity: 1;
+    width:100%;
 }
 
 .logoMobile {
@@ -84,8 +85,15 @@
     width: 100%;
 }
 
+.description{
+    background-color: var(--color-postman-trousers-dark);
+    padding-left:0.5rem;
+    padding-top: 0.5rem;
+}
 .wantedItems {
+    padding: 1rem;
 }
 
 .openingHours {
+    width:100%
 }

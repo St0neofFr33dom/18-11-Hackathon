@@ -68,7 +68,7 @@ export const foodBanks = [
         businessDescription: '',
         wantedItems: ['meat'],
         openingHours:{
-          mon: false,
+          mon: {open:'3:33',close:'23:23'},
           tue: false,
           wed: false,
           thu: false,
