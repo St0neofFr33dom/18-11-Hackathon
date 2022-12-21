@@ -1,85 +1,91 @@
 .infoBox {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 0.5rem;
-  border: 1px black solid;
-  background-color: var(--color-postman-trousers);
-  padding: 0.5em;
-  position: absolute;
-  bottom: 0;
-  color: #ffffff;
-  font-family: "Comfortaa";
-  top: 80%;
-  width: 90%;
-  height: 75%;
-  left: 50%;
-  right: 50%;
-  transform: translate(-50%);
-  transition: 0.3s;
-  z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    border: 1px black solid;
+    background-color: var(--color-postman-trousers);
+    padding: 0.5em;
+    position: absolute;
+    bottom: 0;
+    color: #ffffff;
+    font-family: 'Comfortaa';
+    top: 80%;
+    width: 90%;
+    height: 75%;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%);
+    transition: 0.3s;
+    z-index: 3;
 }
 
 .expandedInfoBox {
-  /* height: 75%; */
-  top: 25vh;
+    /* height: 75%; */
+    top: 25vh;
 }
 
 .preview {
-  display: grid;
-  grid-template-columns: 9fr 2fr 9fr;
-  /* justify-content: space-between; */
-  width: 100%;
+    display: grid;
+    grid-template-columns: 9fr 2fr 9fr;
+    /* justify-content: space-between; */
+    width: 100%;
 }
 .data {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 .labels {
-  text-align: left;
+    text-align: left;
 }
 .values {
-  align-self: flex-start;
-  padding-left: 0.5em;
-  text-align: left;
+    align-self: flex-start;
+    padding-left: 0.5em;
+    text-align: left;
 }
 
 .contactDetails {
-  margin-top: 1.5rem;
-  align-self: flex-start;
-  text-align: left;
-  padding-left: 0.5em;
+    margin-top: 1.5rem;
+    align-self: flex-start;
+    text-align: left;
+    padding-left: 0.5em;
 }
 
-.survey {
-  text-align: left;
-  padding-left: 0.5em;
+.features {
+    text-align: left;
+    padding-left: 0.5em;
 }
 
 .hiddenText {
-  opacity: 0;
-  transition: 0.3s;
+    opacity: 0;
+    transition: 0.3s;
 }
 .expandedText {
-  opacity: 1;
+    opacity: 1;
 }
 
 .logoMobile {
-  justify-self: flex-end;
-  background-color: aliceblue;
-  border-radius: 50%;
-  position: absolute;
-  width: min(10%, 300px);
+    justify-self: flex-end;
+    background-color: aliceblue;
+    border-radius: 50%;
+    position: absolute;
+    width: min(10%, 300px);
 }
 
 .desktopInfoBox {
-  position: relative;
-  align-self: flex-start;
-  top: 0;
-  right: none;
-  left: none;
-  height: 100%;
-  width: 100%;
+    position: relative;
+    align-self: flex-start;
+    top: 0;
+    right: none;
+    left: none;
+    height: 100%;
+    width: 100%;
+}
+
+.wantedItems {
+}
+
+.openingHours {
 }

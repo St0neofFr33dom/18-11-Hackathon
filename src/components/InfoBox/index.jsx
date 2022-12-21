@@ -25,7 +25,11 @@ function InfoBox({ props }) {
     }, [desktop]);
 
     return (
-        <div className={`${styles.infoBox} ${expand ? styles.expandedInfoBox : ''} ${desktop ? styles.desktopInfoBox: ''}`}>
+        <div
+            className={`${styles.infoBox} ${
+                expand ? styles.expandedInfoBox : ''
+            } ${desktop ? styles.desktopInfoBox : ''}`}
+        >
             <div className={styles.preview}>
                 <div className={styles.values}>
                     <h4 style={{ fontWeight: 'bold' }}>{props.name}</h4>
@@ -42,22 +46,36 @@ function InfoBox({ props }) {
                 <div></div>
             </div>
 
-            <div className={`${styles.hiddenText} ${expand ? styles.expandedText : ''}`}>
+            <div
+                className={`${styles.hiddenText} ${
+                    expand ? styles.expandedText : ''
+                }`}
+            >
                 <div className={styles.contactDetails}>
                     <TextWithIcon text={props.phone} icon={faPhone} />
                     <TextWithIcon text={props.email} icon={faEnvelope} />
                     <TextWithIcon text={props.website} icon={faGlobe} />
                 </div>
-                <details className={styles.survey}>
-                    <summary>have you visited {props.name}?</summary>
-                    <h4>check all that apply</h4>
-                    <br />
-                    <h4>staff are friendly</h4>
-                    <h4>easy to find</h4>
-                    <h4>parking is available</h4>
-                    <h4>produce is good quality</h4>
-                    <h4>wheelchair access available</h4>
+                <details className={styles.openingHours}>
+                    <summary>opening hours</summary>
+                    <OpeningHours />
                 </details>
+                <div className={styles.features}>
+                    {props.parking && <h4>parking is available</h4>}
+                    {props.wheelchairAccess && (
+                        <h4>wheelchair access available</h4>
+                    )}
+                    {props.businessDescription && (
+                        <h4>{props.businessDescription}</h4>
+                    )}
+                    <br />
+                    <h3>currently wanted items</h3>
+                    <ul className={styles.wantedItems}>
+                        {props.wantedItems.map((item, index) => {
+                            return <li key={index}>{item}</li>;
+                        })}
+                    </ul>
+                </div>
             </div>
         </div>
     );
