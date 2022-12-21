@@ -10,6 +10,7 @@ import {
 // import useBrowserWidth from '../../hooks/useBrowserWidth';
 import cyLogo from '../../assets/community_yard-logo.svg';
 import browserWidthContext from '../../context/browserWidthContext';
+import { OpeningHours } from '../OpeningHours';
 
 function InfoBox({ props }) {
     const [expand, setExpand] = useState(false);
@@ -58,7 +59,7 @@ function InfoBox({ props }) {
                 </div>
                 <details className={styles.openingHours}>
                     <summary>opening hours</summary>
-                    <OpeningHours />
+                    <OpeningHours props={props} />
                 </details>
                 <div className={styles.features}>
                     {props.parking && <h4>parking is available</h4>}
