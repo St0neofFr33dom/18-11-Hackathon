@@ -70,7 +70,9 @@ function InfoBox({ props }) {
                     )}
                     <br/>
                     {props.businessDescription && (
-                        <h4 className={styles.description}>"{props.businessDescription}"</h4>
+                        <div className={styles.descriptionContainer}>
+                            <h4 className={styles.description}>"{props.businessDescription}"</h4>
+                        </div>
                     )}
                     <br />
                     <h3>currently wanted items :</h3>

@@ -6,7 +6,6 @@
     gap: 0.5rem;
     border: 1px black solid;
     background-color: var(--color-postman-trousers);
-    padding: 0.5em;
     position: absolute;
     bottom: 0;
     color: #ffffff;
@@ -19,17 +18,27 @@
     transform: translate(-50%);
     transition: 0.3s;
     z-index: 3;
+    padding: 1.5%;
 }
-
 .expandedInfoBox {
-    /* height: 75%; */
     top: 25vh;
 }
+
+.desktopInfoBox {
+    position: relative;
+    align-self: flex-start;
+    top: 0;
+    right: none;
+    left: none;
+    height: 100%;
+    width: 97%;
+    padding: 1.5%;
+}
+
 
 .preview {
     display: grid;
     grid-template-columns: 9fr 2fr 9fr;
-    /* justify-content: space-between; */
     width: 100%;
 }
 .data {
@@ -42,7 +51,6 @@
 }
 .values {
     align-self: flex-start;
-    padding-left: 0.5em;
     text-align: left;
 }
 
@@ -50,12 +58,11 @@
     margin-top: 1.5rem;
     align-self: flex-start;
     text-align: left;
-    padding-left: 0.5em;
 }
 
 .features {
+    margin: 0 auto;
     text-align: left;
-    padding-left: 0.5em;
 }
 
 .hiddenText {
@@ -75,21 +82,11 @@
     width: min(10%, 300px);
 }
 
-.desktopInfoBox {
-    position: relative;
-    align-self: flex-start;
-    top: 0;
-    right: none;
-    left: none;
-    height: 100%;
-    width: 100%;
+.descriptionContainer {
+    padding: 1rem;
+    background-color: var(--color-postman-trousers-dark);
 }
 
-.description{
-    background-color: var(--color-postman-trousers-dark);
-    padding-left:0.5rem;
-    padding-top: 0.5rem;
-}
 .wantedItems {
     padding: 1rem;
 }
