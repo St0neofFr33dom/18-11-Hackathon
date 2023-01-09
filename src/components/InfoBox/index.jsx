@@ -1,15 +1,18 @@
 import { useEffect, useState, useContext } from 'react';
-import './InfoBox.css';
+import styles from './InfoBox.module.css';
 import ExpandCollapseArrow from '../ExpandCollapseArrow';
 import TextWithIcon from '../TextWithIcon';
 import {
     faEnvelope,
     faPhone,
     faGlobe,
+    faCar,
+    faWheelchair
 } from '@fortawesome/free-solid-svg-icons';
 // import useBrowserWidth from '../../hooks/useBrowserWidth';
 import cyLogo from '../../assets/community_yard-logo.svg';
 import browserWidthContext from '../../context/browserWidthContext';
+import { OpeningHours } from '../OpeningHours';
 
 function InfoBox({ props }) {
     const [expand, setExpand] = useState(false);
@@ -25,9 +28,13 @@ function InfoBox({ props }) {
     }, [desktop]);
 
     return (
-        <div className={`InfoBox ${expand ? `expandedInfoBox` : ''}`}>
-            <div className='preview'>
-                <div className='values'>
+        <div
+            className={`${styles.infoBox} ${
+                expand ? styles.expandedInfoBox : ''
+            } ${desktop ? styles.desktopInfoBox : ''}`}
+        >
+            <div className={styles.preview}>
+                <div className={styles.values}>
                     <h4 style={{ fontWeight: 'bold' }}>{props.name}</h4>
                     <h4>
                         {props.firstLine} {props.secondLine}
@@ -38,26 +45,43 @@ function InfoBox({ props }) {
                 {!desktop && (
                     <ExpandCollapseArrow state={expand} setState={setExpand} />
                 )}
-                {!desktop && <img className='logo-mobile' src={cyLogo} />}
+                {!desktop && <img className={styles.logoMobile} src={cyLogo} />}
                 <div></div>
             </div>
 
-            <div className={`hiddenText ${expand ? `expandedText` : ''}`}>
-                <div className='contact-details'>
+            <div
+                className={`${styles.hiddenText} ${
+                    expand ? styles.expandedText : ''
+                }`}
+            >
+                <div className={styles.contactDetails}>
                     <TextWithIcon text={props.phone} icon={faPhone} />
                     <TextWithIcon text={props.email} icon={faEnvelope} />
                     <TextWithIcon text={props.website} icon={faGlobe} />
                 </div>
-                <details className='survey'>
-                    <summary>have you visited {props.name}?</summary>
-                    <h4>check all that apply</h4>
-                    <br />
-                    <h4>staff are friendly</h4>
-                    <h4>easy to find</h4>
-                    <h4>parking is available</h4>
-                    <h4>produce is good quality</h4>
-                    <h4>wheelchair access available</h4>
+                <details className={styles.openingHours}>
+                    <summary>opening hours</summary>
+                    <OpeningHours props={props} />
                 </details>
+                <div className={styles.features}>
+                    {props.parking && <TextWithIcon text="parking is available" icon={faCar}/>}
+                    {props.wheelchairAccess && (
+                        <TextWithIcon text="wheelchair access available" icon={faWheelchair}/>
+                    )}
+                    <br/>
+                    {props.businessDescription && (
+                        <div className={styles.descriptionContainer}>
+                            <h4 className={styles.description}>"{props.businessDescription}"</h4>
+                        </div>
+                    )}
+                    <br />
+                    <h3>currently wanted items :</h3>
+                    <ul className={styles.wantedItems}>
+                        {props.wantedItems.map((item, index) => {
+                            return <li key={index}>{item}</li>;
+                        })}
+                    </ul>
+                </div>
             </div>
         </div>
     );

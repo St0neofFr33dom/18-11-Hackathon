@@ -1,10 +1,13 @@
+
 import { useEffect } from 'react';
+
 import LoginPage from './pages/LoginPage';
 import MapPage from './pages/MapPage';
 import useBrowserWidth from './hooks/useBrowserWidth';
 import browserWidthContext from './context/browserWidthContext';
 
 function App() {
+
     /*
         Make a get request to server for foodbanks
         Consider the time it takes for the get request and the google map api request.
@@ -25,11 +28,9 @@ function App() {
     }, []);
  
     
-    
-
-    
     //custom hook to determine screen size (stored in useContext)
     const desktop = useBrowserWidth(800);
+
     return (
         <browserWidthContext.Provider value={desktop}>
             <MapPage />

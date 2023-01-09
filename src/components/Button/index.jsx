@@ -1,9 +1,9 @@
 import React from 'react'
-import "./Button.css"
+import styles from "./Button.module.css"
 
 function Button ({text,func}) {
     return (
-        <div className="button" onClick={func}>
+        <div className={styles.button} onClick={func}>
             {text}
         </div>
     )
