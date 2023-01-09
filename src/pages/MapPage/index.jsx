@@ -66,6 +66,7 @@ function MapPage() {
                         center={searchCoordinates}
                         radius={radius * 1000}
                         fillColor='#0F0'
+                        cursor={null}
                     />
                 </Map>
             </Wrapper>
