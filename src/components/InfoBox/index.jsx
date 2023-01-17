@@ -108,7 +108,7 @@ function InfoBox({ props }) {
                     </div>
                 </div>
             ) : (
-                <h1>Hello</h1>
+                <p>Click a location for further details</p>
             )}
         </div>
     );
