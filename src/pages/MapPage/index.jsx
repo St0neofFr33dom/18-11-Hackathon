@@ -5,15 +5,14 @@ import Marker from '../../components/Map/Marker';
 import InfoBox from '../../components/InfoBox';
 import MileRadius from '../../components/Map/MileRadius/index.jsx';
 import { Wrapper, Status } from '@googlemaps/react-wrapper';
-import { foodBanks } from '../../data/dummdata.js';
+import { dummyData } from '../../data/dummdata.js';
 import getGeolocation from '../../funcs/getGeolocation';
 import styles from './MapPage.module.css';
 import browserWidthContext from '../../context/browserWidthContext';
 import SplashScreen from '../SplashPage/SplashScreen';
 import ErrorComponent from '../../components/Map/ErrorComponent/ErrorComponent';
 
-function MapPage() {
-    const [locations, setLocations] = useState(foodBanks);
+function MapPage({ foodBanks }) {
     const [radius, setRadius] = useState(10);
 
     const desktop = useContext(browserWidthContext);
@@ -22,7 +21,8 @@ function MapPage() {
         lng: -0.118092,
     });
 
-    const [displayedData, setDisplayedData] = useState(foodBanks[0]);
+    //when a marker is clicked, sets the 'place' attribute to correspond to the currently clicked location
+    const [displayedData, setDisplayedData] = useState();
 
     function logCoord() {
         console.log(searchCoordinates);
@@ -61,18 +61,23 @@ function MapPage() {
                     radius={radius}
                     setRadius={setRadius}
                 >
-                    {locations.map((place, index) => {
-                        return (
-                            <Marker
-                                key={index}
-                                position={{ lat: place.lat, lng: place.lng }}
-                                data={place}
-                                setState={() => {
-                                    setDisplayedData(place);
-                                }}
-                            />
-                        );
-                    })}
+                    {/* can only map through foodBanks after async fetch so checks if it exists before trying to map using && */}
+                    {foodBanks &&
+                        foodBanks.map((place, index) => {
+                            return (
+                                <Marker
+                                    key={index}
+                                    position={{
+                                        lat: place.lat,
+                                        lng: place.lng,
+                                    }}
+                                    data={place}
+                                    setState={() => {
+                                        setDisplayedData(place);
+                                    }}
+                                />
+                            );
+                        })}
                     <MileRadius
                         center={searchCoordinates}
                         radius={radius * 1000}
@@ -82,7 +87,7 @@ function MapPage() {
                 </Map>
             </Wrapper>
             {/* <SearchBar setSearchCoordinates={setSearchCoordinates} /> */}
-            <InfoBox props={displayedData} />
+            {foodBanks && <InfoBox props={displayedData} />}
 
             {/* <Form locations={locations} setLocations={setLocations} /> */}
         </div>

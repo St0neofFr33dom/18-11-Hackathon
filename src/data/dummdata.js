@@ -1,6 +1,6 @@
-export const foodBanks = [
+export const dummyData = [
     {
-        name: '7Eleven',
+        name: '7ElevenD',
         lat: 51.509865,
         lng: -0.118092,
         firstLine: '123',
@@ -15,18 +15,18 @@ export const foodBanks = [
         businessDescription:
             '7Eleven is a foodbank that works with the community to give back. Our partners are...',
         wantedItems: ['fruit', 'veg', 'cheese', 'washing powder'],
-        openingHours:{
-          mon: {open:'9:00',close:'17:00'},
-          tue: {open:'9:00',close:'17:00'},
-          wed: {open:'9:00',close:'17:00'},
-          thu: {open:'9:00',close:'17:00'},
-          fri: {open:'9:00',close:'17:00'},
-          sat: false,
-          sun: false,
-        }
+        openingHours: {
+            mon: { open: '9:00', close: '17:00' },
+            tue: { open: '9:00', close: '17:00' },
+            wed: { open: '9:00', close: '17:00' },
+            thu: { open: '9:00', close: '17:00' },
+            fri: { open: '9:00', close: '17:00' },
+            sat: false,
+            sun: false,
+        },
     },
     {
-        name: 'Woolworths',
+        name: 'WoolworthsD',
         lat: 51.441868,
         lng: -0.084805,
         firstLine: '55',
@@ -41,19 +41,19 @@ export const foodBanks = [
         businessDescription:
             'Woolworths is a foodbank that works with the community to give back. Our partners are...',
         wantedItems: ['cereal', 'veg', 'milk', 'washing-up liquid'],
-        openingHours:{
-          mon: {open:'9:00',close:'17:00'},
-          tue: {open:'10:00',close:'13:00'},
-          wed: false,
-          thu: {open:'9:00',close:'17:00'},
-          fri: false,
-          sat: {open:'11:00',close:'17:00'},
-          sun: false,
-        }
+        openingHours: {
+            mon: { open: '9:00', close: '17:00' },
+            tue: { open: '10:00', close: '13:00' },
+            wed: false,
+            thu: { open: '9:00', close: '17:00' },
+            fri: false,
+            sat: { open: '11:00', close: '17:00' },
+            sun: false,
+        },
     },
-    
+
     {
-        name: 'McDonalds',
+        name: 'McDonaldsD',
         lat: 51.550503,
         lng: -0.304841,
         firstLine: '52',
@@ -67,15 +67,14 @@ export const foodBanks = [
         wheelchairAccess: false,
         businessDescription: '',
         wantedItems: ['meat'],
-        openingHours:{
-          mon: {open:'3:33',close:'23:23'},
-          tue: false,
-          wed: false,
-          thu: false,
-          fri: false,
-          sat: false,
-          sun: {open:'3:33',close:'23:23'},
-        }
+        openingHours: {
+            mon: { open: '3:33', close: '23:23' },
+            tue: false,
+            wed: false,
+            thu: false,
+            fri: false,
+            sat: false,
+            sun: { open: '3:33', close: '23:23' },
+        },
     },
-    
 ];
