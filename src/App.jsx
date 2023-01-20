@@ -1,10 +1,15 @@
+
 import { useEffect, useState } from 'react';
+import { Wrapper, Status } from "@googlemaps/react-wrapper"
+
 import LoginPage from './pages/LoginPage';
 import MapPage from './pages/MapPage';
 import useBrowserWidth from './hooks/useBrowserWidth';
 import browserWidthContext from './context/browserWidthContext';
+import SplashScreen from './pages/SplashPage/SplashScreen';
 
 function App() {
+
     /*
         Make a get request to server for foodbanks
         Consider the time it takes for the get request and the google map api request.
