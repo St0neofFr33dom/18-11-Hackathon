@@ -9,14 +9,14 @@ import { foodBanks } from '../../data/dummdata.js';
 import getGeolocation from '../../funcs/getGeolocation';
 import styles from './MapPage.module.css';
 import browserWidthContext from '../../context/browserWidthContext';
+import SplashScreen from '../SplashPage/SplashScreen';
+import ErrorComponent from '../../components/Map/ErrorComponent/ErrorComponent';
 
 function MapPage() {
     const [locations, setLocations] = useState(foodBanks);
-
     const [radius, setRadius] = useState(10);
 
     const desktop = useContext(browserWidthContext);
-
     const [searchCoordinates, setSearchCoordinates] = useState({
         lat: 51.509865,
         lng: -0.118092,
@@ -27,10 +27,21 @@ function MapPage() {
     function logCoord() {
         console.log(searchCoordinates);
     }
+    
+    // const render = (status) => {
+    //     return <h1>{status}</h1>;
+    // };
 
     const render = (status) => {
-        return <h1>{status}</h1>;
-    };
+        switch (status) {
+          case Status.LOADING:
+            return <SplashScreen />;
+          case Status.FAILURE:
+            return <ErrorComponent />;
+          case Status.SUCCESS:
+            return <Map />;
+        }
+      };
 
     async function testFunction() {
         getGeolocation(setSearchCoordinates);
