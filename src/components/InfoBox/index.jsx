@@ -14,6 +14,9 @@ import cyLogo from '../../assets/community_yard-logo.svg';
 import browserWidthContext from '../../context/browserWidthContext';
 import { OpeningHours } from '../OpeningHours';
 
+import LoginButton from '../../components/LoginButton';
+import LogoutButton from '../../components/LogoutButton';
+
 function InfoBox({ props }) {
     const [expand, setExpand] = useState(false);
 
@@ -33,6 +36,11 @@ function InfoBox({ props }) {
                 expand ? styles.expandedInfoBox : ''
             } ${desktop ? styles.desktopInfoBox : ''}`}
         >
+
+            <LoginButton />
+            <LogoutButton />
+
+
             {/* checks if there are props (i.e a marker has been clicked) then displays the clicked info, otherwise
     displays 'please click on marker (e.g)' - so when page loads there is no locatiob selected and instead gives user prompt
     to click location */}
@@ -109,6 +117,7 @@ function InfoBox({ props }) {
                 </div>
             ) : (
                 <p>Click a location for further details</p>
+
             )}
         </div>
     );
