@@ -16,8 +16,10 @@ import { OpeningHours } from '../OpeningHours';
 
 import LoginButton from '../../components/LoginButton';
 import LogoutButton from '../../components/LogoutButton';
+import { useAuth0 } from '@auth0/auth0-react';
 
 function InfoBox({ props }) {
+    const { user, isAuthenticated, isLoading } = useAuth0();
     const [expand, setExpand] = useState(false);
 
     const desktop = useContext(browserWidthContext);
@@ -30,16 +32,20 @@ function InfoBox({ props }) {
         }
     }, [desktop]);
 
+    if (isLoading) {
+        return <div>Loading ...</div>;
+    }
+
+    console.log(user);
+
     return (
         <div
             className={`${styles.infoBox} ${
                 expand ? styles.expandedInfoBox : ''
             } ${desktop ? styles.desktopInfoBox : ''}`}
         >
-
-            <LoginButton />
-            <LogoutButton />
-
+            {!isAuthenticated && <LoginButton />}
+            {isAuthenticated && <LogoutButton />}
 
             {/* checks if there are props (i.e a marker has been clicked) then displays the clicked info, otherwise
     displays 'please click on marker (e.g)' - so when page loads there is no locatiob selected and instead gives user prompt
@@ -117,7 +123,6 @@ function InfoBox({ props }) {
                 </div>
             ) : (
                 <p>Click a location for further details</p>
-
             )}
         </div>
     );
