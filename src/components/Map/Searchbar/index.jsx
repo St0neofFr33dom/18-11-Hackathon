@@ -1,13 +1,16 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { getRequest } from '../../../funcs/getRequest.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import styles from './Searchbar.module.css';
+import browserWidthContext from '../../../context/browserWidthContext.jsx';
 
 function Searchbar({ setSearchCoordinates }) {
     const [searchValue, setSearchValue] = useState('');
 
     const [borderFocus, setBorderFocus] = useState(false);
+
+    const desktop = useContext(browserWidthContext)
 
     async function findCoordinates() {
         let coordinates = await getRequest(searchValue);
@@ -41,7 +44,7 @@ function Searchbar({ setSearchCoordinates }) {
         <div
             className={`${styles.inputContainer} ${
                 borderFocus ? styles.inputGreenBorder : ''
-            }`}
+            } ${desktop ? styles.desktopInputContainer : ''}`}
         >
             <FontAwesomeIcon
                 className={styles.inputMagnifyingGlass}

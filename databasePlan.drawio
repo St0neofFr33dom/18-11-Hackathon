@@ -1,0 +1,28 @@
+<mxfile host="65bd71144e">
+    <diagram id="0AvKXSifM89ZyH7y4G4t" name="Page-1">
+        <mxGraphModel dx="1276" dy="734" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="useEffect on load&lt;br&gt;to populate map&lt;br&gt;with all FOODBANKS" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="80" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Option for user&lt;br&gt;to store their location&lt;br&gt;details in USERS" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="80" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Foodbank owner&lt;br&gt;can&amp;nbsp;&lt;br&gt;CREATE a document&lt;br&gt;UPDATE their details&lt;br&gt;and&lt;br&gt;DELETE their foodbank" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="100" y="230" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="{name: 'string',&lt;br&gt;email: 'email', shareLocation:boolean,&lt;br&gt;(unique id asigned by mongoDB)}" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="430" y="250" width="180" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="&lt;div style=&quot;color: rgb(248 , 248 , 242) ; background-color: rgb(39 , 40 , 34) ; font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; line-height: 18px&quot;&gt;&lt;div&gt;    {&lt;/div&gt;&lt;div&gt;        name: &lt;span style=&quot;color: #e6db74&quot;&gt;'7Eleven'&lt;/span&gt;,&lt;/div&gt;&lt;div&gt;        lat: &lt;span style=&quot;color: #ae81ff&quot;&gt;51.509865&lt;/span&gt;,&lt;/div&gt;&lt;div&gt;        lng: &lt;span style=&quot;color: #ae81ff&quot;&gt;-0.118092&lt;/span&gt;,&lt;/div&gt;&lt;div&gt;        firstLine: &lt;span style=&quot;color: #e6db74&quot;&gt;'123'&lt;/span&gt;,&lt;/div&gt;&lt;div&gt;        secondLine: &lt;span style=&quot;color: #e6db74&quot;&gt;'Fake Street'&lt;/span&gt;,&lt;/div&gt;&lt;div&gt;        town: &lt;span style=&quot;color: #e6db74&quot;&gt;'London'&lt;/span&gt;,&lt;/div&gt;&lt;div&gt;        postcode: &lt;span style=&quot;color: #e6db74&quot;&gt;'WA1 SJJ'&lt;/span&gt;,&lt;/div&gt;&lt;div&gt;        phone: &lt;span style=&quot;color: #e6db74&quot;&gt;'07777777777'&lt;/span&gt;,&lt;/div&gt;&lt;div&gt;        email: &lt;span style=&quot;color: #e6db74&quot;&gt;'foodbankinc@hotmail.com'&lt;/span&gt;,&lt;/div&gt;&lt;div&gt;        website: &lt;span style=&quot;color: #e6db74&quot;&gt;'www.google.com'&lt;/span&gt;,&lt;/div&gt;&lt;div&gt;        parking: &lt;span style=&quot;color: #ae81ff&quot;&gt;true&lt;/span&gt;,&lt;/div&gt;&lt;div&gt;        wheelchairAccess: &lt;span style=&quot;color: #ae81ff&quot;&gt;true&lt;/span&gt;,&lt;/div&gt;&lt;div&gt;        businessDescription:&lt;/div&gt;&lt;div&gt;            &lt;span style=&quot;color: #e6db74&quot;&gt;'7Eleven is a foodbank...&lt;/span&gt;,&lt;/div&gt;&lt;div&gt;        wantedItems: [&lt;span style=&quot;color: #e6db74&quot;&gt;'fruit'&lt;/span&gt;, &lt;span style=&quot;color: #e6db74&quot;&gt;'veg'&lt;/span&gt;, &lt;span style=&quot;color: #e6db74&quot;&gt;'cheese'&lt;/span&gt;, &lt;span style=&quot;color: #e6db74&quot;&gt;'washing powder'&lt;/span&gt;],&lt;/div&gt;&lt;div&gt;        openingHours:{&lt;/div&gt;&lt;div&gt;          mon: {open:&lt;span style=&quot;color: #e6db74&quot;&gt;'9:00'&lt;/span&gt;,close:&lt;span style=&quot;color: #e6db74&quot;&gt;'17:00'&lt;/span&gt;},&lt;/div&gt;&lt;div&gt;          tue: {open:&lt;span style=&quot;color: #e6db74&quot;&gt;'9:00'&lt;/span&gt;,close:&lt;span style=&quot;color: #e6db74&quot;&gt;'17:00'&lt;/span&gt;},&lt;/div&gt;&lt;div&gt;          wed: {open:&lt;span style=&quot;color: #e6db74&quot;&gt;'9:00'&lt;/span&gt;,close:&lt;span style=&quot;color: #e6db74&quot;&gt;'17:00'&lt;/span&gt;},&lt;/div&gt;&lt;div&gt;          thu: {open:&lt;span style=&quot;color: #e6db74&quot;&gt;'9:00'&lt;/span&gt;,close:&lt;span style=&quot;color: #e6db74&quot;&gt;'17:00'&lt;/span&gt;},&lt;/div&gt;&lt;div&gt;          fri: {open:&lt;span style=&quot;color: #e6db74&quot;&gt;'9:00'&lt;/span&gt;,close:&lt;span style=&quot;color: #e6db74&quot;&gt;'17:00'&lt;/span&gt;},&lt;/div&gt;&lt;div&gt;          sat: &lt;span style=&quot;color: #ae81ff&quot;&gt;false&lt;/span&gt;,&lt;/div&gt;&lt;div&gt;          sun: &lt;span style=&quot;color: #ae81ff&quot;&gt;false&lt;/span&gt;,&lt;/div&gt;&lt;div&gt;        }&lt;/div&gt;&lt;div&gt;    },&lt;/div&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="10" y="440" width="340" height="380" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" style="edgeStyle=none;html=1;" edge="1" parent="1" source="7" target="7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
