@@ -19,7 +19,7 @@ export default function Map({
 }) {
     const ref = useRef(null);
     const [map, setMap] = useState();
-
+    
     function handleChange(e) {
         setRadius(e.target.value);
     }
