@@ -52,8 +52,6 @@ function MapPage({ foodBanks }) {
 
     return (
         <>
-            <LoginButton />
-            <LogoutButton />
             <div
                 className={` ${styles.mapContainer} ${
                     desktop ? styles.desktopMapContainer : ''
